@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.user.setPresence({ status: 'online', game: { name: '!help' } });
+client.user.setGame('!help');
 
 client.on('message', (message) => {    
     
