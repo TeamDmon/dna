@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.user.setGame('!help');
-
 client.on('message', (message) => {    
     
     msg = message.content.toLowerCase();
