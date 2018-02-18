@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+client.user.setPresence({ status: 'online', game: { name: '!help' } });
+
 client.on('message', (message) => {    
     
     msg = message.content.toLowerCase();
