@@ -18,7 +18,7 @@ client.on('message', (message) => {
         message.channel.sendMessage('pong');
     }
 
-    if (message.content == '!id') {
+    if (message.content == '!discid') {
         message.reply("Your discord is " + message.author.username + "#" + message.author.discriminator);
     }
 });
