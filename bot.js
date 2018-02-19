@@ -12,7 +12,7 @@ var fortunes = [
 ]
 
 client.on("message", (message) => {
-    client.user.setActivity("!help", {type: "PLAYING"});
+    // client.user.setActivity("!help", {type: "PLAYING"});
     
     //
     // Commands
