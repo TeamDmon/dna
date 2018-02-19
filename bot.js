@@ -17,8 +17,8 @@ client.on("message", (message) => {
     //
     // Commands
     //
-    // if (!message.content.startsWith(prefix)) return;
 
+    msg = message.content.toLowerCase();
     var args = message.content.substring(prefix.length).split(" ");
 
     switch (args[0].toLowerCase()) {
@@ -36,40 +36,42 @@ client.on("message", (message) => {
             break;
 
         case "bunker":
-            message.delete(message);
+            message.delete();
             message.channel.send("https://piratesbunker.tumblr.com/");
-            break;
-
-        case "purge5":
-
-            break;
-
-        case "purge10":
-
             break;
     }
     
     //
     // Banned Words
     //
-    var bannedWords = ["nigger", "niggger", "n i g g e r", "niggers", "nigggers", "n i g g e rs"];
-    msg = message.content.toLowerCase();
+    var bannedWords = [
+        "nigger",
+        "niggger",
+        "n i g g e r",
+        "niggers",
+        "nigggers",
+        "n i g g e r s",
+        "discord.gg",
+        "discord.me"
+    ];
 
     for (i = 0; i < bannedWords.length; i++) {
         if (msg.includes(bannedWords[i])) {
-            message.delete(message);
+            message.delete();
         }
+
+        if (msg.includes("discord.me/dna")) return;
     }
 
     //
     // Exposure Prevention
     //
     if (msg.includes("jacob") && msg.includes("bunker")) {
-        message.delete(message);
+        message.delete();
     }
 
     if (msg.includes("mejko") && msg.includes("bunker")) {
-        message.delete(message);
+        message.delete();
     }
 });
 
@@ -81,6 +83,10 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
             newMember.setNickname(oldMember.displayName);
         }
     }
+});
+
+client.on("guildMemberAdd", member => {
+    member.guild.defaultChannel.send(`Welcome ${member}! Please take the time to look over our <#412464152293146634>.`);
 });
 
 client.login(process.env.BOT_TOKEN);
