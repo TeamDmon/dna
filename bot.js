@@ -17,7 +17,7 @@ client.on("message", (message) => {
     //
     // Commands
     //
-    if (!message.content.startsWith(prefix)) return;
+    // if (!message.content.startsWith(prefix)) return;
 
     var args = message.content.substring(prefix.length).split(" ");
 
