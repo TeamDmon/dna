@@ -1,6 +1,6 @@
 {
-  "name": "Test",
-  "description": "Test",
+  "name": "DNA Bot",
+  "description": "Just another Deoxyribonucleic Acid!",
   "version": "0.0.0",
   "main": "bot.js",
   "scripts": {
