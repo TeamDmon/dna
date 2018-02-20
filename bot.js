@@ -39,6 +39,11 @@ client.on("message", (message) => {
             message.delete();
             message.channel.send("https://piratesbunker.tumblr.com/");
             break;
+
+        case "stream":
+            message.reply("For live updates on when MEJKO goes live, follow\n:point_right: https://twitch.tv/MEJKOmusic");
+            break;
+
     }
     
     //
