@@ -43,6 +43,11 @@ client.on("message", (message) => {
         case "stream":
             message.reply("For live updates on when MEJKO goes live, follow\n:point_right: https://twitch.tv/MEJKOmusic");
             break;
+            
+        case "nightpulselucient":
+            message.delete();
+            message.channel.send("Obvious yet again, <@414202286848344075> is Lucient undercover.");
+            break;
 
     }
     
