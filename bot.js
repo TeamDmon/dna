@@ -9,7 +9,7 @@ var fortunes = [
     "Don\'t count on it.",
     "My sources say no.",
     "Outlook not so good."
-];
+]
 
 client.on("message", (message) => {
     // client.user.setActivity("!help", {type: "PLAYING"});
@@ -62,10 +62,7 @@ client.on("message", (message) => {
         "nigggers",
         "n i g g e r s",
         "discord.gg",
-        "discord.me",
-        "ben shapiro",
-        "jordan peterson",
-        "femenazi"
+        "discord.me"
     ];
 
     for (i = 0; i < bannedWords.length; i++) {
