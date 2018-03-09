@@ -9,7 +9,7 @@ var fortunes = [
     "Don\'t count on it.",
     "My sources say no.",
     "Outlook not so good."
-]
+];
 
 client.on("message", (message) => {
     // client.user.setActivity("!help", {type: "PLAYING"});
