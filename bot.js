@@ -83,6 +83,31 @@ client.on("message", (message) => {
     if (msg.includes("mejko") && msg.includes("bunker")) {
         message.delete();
     }
+
+    if (msg.includes("femenist") && msg.includes("rights")) {
+        message.delete();
+        message.reply("Please move political conversations to <#421505994833657856>");
+    }
+
+    if (msg.includes("femenist") && msg.includes("triggered")) {
+        message.delete();
+        message.reply("Please move political conversations to <#421505994833657856>");
+    }
+
+    if (msg.includes("jordan peterson")) {
+        message.delete();
+        message.reply("Please move political conversations to <#421505994833657856>");
+    }
+
+    if (msg.includes("ben shapiro")) {
+        message.delete();
+        message.reply("Please move political conversations to <#421505994833657856>");
+    }
+
+    if (msg.includes("femenazi")) {
+        message.delete();
+        message.reply("Please move political conversations to <#421505994833657856>");
+    }
 });
 
 client.on("guildMemberUpdate", (oldMember, newMember) => {
