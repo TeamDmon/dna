@@ -49,6 +49,11 @@ client.on("message", (message) => {
             message.channel.send("Obvious yet again, <@414202286848344075> is Lucient undercover.");
             break;
 
+        case "rulesupdated":
+            message.delete();
+            message.channel.send("@everyone The <#412464152293146634> have been updated to now be more in-depth. We recommend you give them a read.");
+            break;
+
     }
     
     //
@@ -84,29 +89,45 @@ client.on("message", (message) => {
         message.delete();
     }
 
-    if (msg.includes("femenist") && msg.includes("rights")) {
-        message.delete();
-        message.reply("Please move political conversations to <#421505994833657856>");
-    }
+    var bannedPoliticalWords = [
+        "jordan peterson",
+        "ben shapiro",
+        "mike pence",
+        "femenazi",
+        "shapiro",
+        "sjw"
+    ];
 
-    if (msg.includes("femenist") && msg.includes("triggered")) {
-        message.delete();
-        message.reply("Please move political conversations to <#421505994833657856>");
-    }
+    if (message.channel.id == "217459438452211722") {
+        for (i = 0; i < bannedPoliticalWords.length; i++) {
+            if (msg.includes(bannedPoliticalWords[i])) {
+                message.delete();
+            }
+        }
 
-    if (msg.includes("jordan peterson")) {
-        message.delete();
-        message.reply("Please move political conversations to <#421505994833657856>");
-    }
+        if (msg.includes("femenist") && msg.includes("triggered")) {
+            message.delete();
+        }
 
-    if (msg.includes("ben shapiro")) {
-        message.delete();
-        message.reply("Please move political conversations to <#421505994833657856>");
-    }
+        if (msg.includes("transgender") && msg.includes("rights")) {
+            message.delete();
+        }
 
-    if (msg.includes("femenazi")) {
-        message.delete();
-        message.reply("Please move political conversations to <#421505994833657856>");
+        if (msg.includes("trans") && msg.includes("rights")) {
+            message.delete();
+        }
+
+        if (msg.includes("transgender") && msg.includes("issues")) {
+            message.delete();
+        }
+
+        if (msg.includes("trans") && msg.includes("issues")) {
+            message.delete();
+        }
+
+        if (msg.includes("left wing") || msg.includes("right wing")) {
+            message.delete();
+        }
     }
 });
 
