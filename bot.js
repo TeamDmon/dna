@@ -143,6 +143,9 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
 
 client.on("guildMemberAdd", member => {
     member.guild.defaultChannel.send(`Welcome ${member}! Please take the time to look over our <#412464152293146634>.`);
+
+    var role = member.guild.roles.find("name", "EVERYBODY");
+    member.addRole(role);
 });
 
 client.login(process.env.BOT_TOKEN);
