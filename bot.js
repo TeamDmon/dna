@@ -27,7 +27,17 @@ client.on("message", (message) => {
             break;
 
         case "help":
-            message.channel.send("**[DNA Bot]** - Moderation Bot\n\n**!help** ~~                                   ~~ this *very* page.\n**!bunker** ~~                              ~~ link to *The Bunker*\n**!8ball <question>** ~~           ~~ ask magic 8 ball a question.");
+            // message.channel.send("**[DNA Bot]** - Moderation Bot\n\n**!help** ~~                                   ~~ this *very* page.\n**!bunker** ~~                              ~~ link to *The Bunker*\n**!8ball <question>** ~~           ~~ ask magic 8 ball a question.");
+            const embed = new Discord.RichEmbed()
+            .setColor(0x7289DA)
+            .setTitle("[DNA Bot] - Command Help")
+            .addField("\u200b", "\u200b")
+            .addField("!help", "this *very* page.")
+            .addField("!bunker", "a link to *The Bunker*.")
+            .addField("!ping", "pings the bot.")
+            .addField("!8ball [question]", "ask magic 8 ball a question.")
+            .addField("!say [text]", "make the bot say something.")
+            message.channel.send({embed})
             break;
 
         case "8ball":
@@ -43,17 +53,10 @@ client.on("message", (message) => {
         case "stream":
             message.reply("For live updates on when MEJKO goes live, follow\n:point_right: https://twitch.tv/MEJKOmusic");
             break;
-            
-        case "nightpulselucient":
-            message.delete();
-            message.channel.send("Obvious yet again, <@414202286848344075> is Lucient undercover.");
-            break;
 
-        case "rulesupdated":
+        case "say":
             message.delete();
-            message.channel.send("@everyone The <#412464152293146634> have been updated to now be more in-depth. We recommend you give them a read.");
-            break;
-
+            if (args[1]) message.channel.send(args[1]);
     }
     
     //
@@ -95,7 +98,7 @@ client.on("message", (message) => {
         "mike pence",
         "femenazi",
         "shapiro",
-        "sjw"
+        "sjw",
     ];
 
     if (message.channel.id == "217459438452211722") {
@@ -126,6 +129,10 @@ client.on("message", (message) => {
         }
 
         if (msg.includes("left wing") || msg.includes("right wing")) {
+            message.delete();
+        }
+
+        if (msg.includes("jordan") && msg.includes("peterson")) {
             message.delete();
         }
     }
