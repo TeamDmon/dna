@@ -70,7 +70,8 @@ client.on("message", (message) => {
         "nigggers",
         "n i g g e r s",
         "discord.gg",
-        "discord.me"
+        "discord.me",
+        "@someone"
     ];
 
     for (i = 0; i < bannedWords.length; i++) {
