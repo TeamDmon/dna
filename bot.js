@@ -40,7 +40,7 @@ client.on("message", (message) => {
             message.channel.send({embed})
             break;
 
-        case "8ball":
+        case "8ballasdfghjkl":
             if (args[1]) message.reply(fortunes[Math.floor(Math.random() * fortunes.length)]);
             else message.reply("Can't read that");
             break;
