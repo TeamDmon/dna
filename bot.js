@@ -127,7 +127,7 @@ client.on("message", (message) => {
 });
 
 client.on("guildMemberUpdate", (oldMember, newMember) => {
-    var bannedChars = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "_"];
+    var bannedChars = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", "/", ":", ";", "<", "=", ">", "?", "@", "_"];
 
     for (i = 0; i < bannedChars.length; i++) {
         if (newMember.displayName.startsWith(bannedChars[i])) {
