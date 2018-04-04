@@ -22,10 +22,6 @@ client.on("message", (message) => {
     var args = message.content.substring(prefix.length).split(" ");
 
     switch (args[0].toLowerCase()) {
-        case "ping":
-            message.channel.send("pong");
-            break;
-
         case "help":
             // message.channel.send("**[DNA Bot]** - Moderation Bot\n\n**!help** ~~                                   ~~ this *very* page.\n**!bunker** ~~                              ~~ link to *The Bunker*\n**!8ball <question>** ~~           ~~ ask magic 8 ball a question.");
             const embed = new Discord.RichEmbed()
@@ -40,11 +36,6 @@ client.on("message", (message) => {
             message.channel.send({embed})
             break;
 
-        case "8ballasdfghjkl":
-            if (args[1]) message.reply(fortunes[Math.floor(Math.random() * fortunes.length)]);
-            else message.reply("Can't read that");
-            break;
-
         case "bunker":
             message.delete();
             message.channel.send("https://piratesbunker.tumblr.com/");
@@ -53,10 +44,6 @@ client.on("message", (message) => {
         case "stream":
             message.reply("For live updates on when MEJKO goes live, follow\n:point_right: https://twitch.tv/MEJKOmusic");
             break;
-
-        case "say":
-            message.delete();
-            if (args[1]) message.channel.send(args[1]);
     }
     
     //
