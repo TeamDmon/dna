@@ -66,7 +66,7 @@ client.on("message", (message) => {
             message.delete();
         }
 
-        if (msg.includes("discord.me/dna")) return;
+        if (msg.includes("discord.me/mejko")) return;
     }
 
     //
